@@ -1,13 +1,14 @@
 package com.fast;
 
 import com.fast.logic.BubbleSort;
+import com.fast.service.SortService;
 
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        BubbleSort<String> sort = new BubbleSort<>();
+        SortService service = new SortService(new BubbleSort<>());
 
-        System.out.println("Result : " + sort.sort(Arrays.asList(args)));
+        System.out.println("Result : " + service.doSort(Arrays.asList(args)));
     }
 }
